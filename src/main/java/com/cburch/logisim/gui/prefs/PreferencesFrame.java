@@ -11,8 +11,6 @@ package com.cburch.logisim.gui.prefs;
 
 import static com.cburch.logisim.gui.Strings.S;
 
-import com.cburch.logisim.fpga.prefs.FpgaOptions;
-import com.cburch.logisim.fpga.prefs.SoftwaresOptions;
 import com.cburch.logisim.gui.generic.LFrame;
 import com.cburch.logisim.util.LocaleListener;
 import com.cburch.logisim.util.LocaleManager;
@@ -29,7 +27,6 @@ public class PreferencesFrame extends LFrame.Dialog {
   private final MyListener myListener = new MyListener();
   private final OptionsPanel[] panels;
   private final JTabbedPane tabbedPane;
-  private int fpgaTabIdx = -1;
 
   private PreferencesFrame() {
     super(null);
@@ -42,8 +39,6 @@ public class PreferencesFrame extends LFrame.Dialog {
           new LayoutOptions(this),
           new SimOptions(this),
           new ExperimentalOptions(this),
-          new SoftwaresOptions(this),
-          new FpgaOptions(this),
         };
     tabbedPane = new JTabbedPane();
     int intlIndex = -1;
@@ -51,7 +46,6 @@ public class PreferencesFrame extends LFrame.Dialog {
       final var panel = panels[index];
       tabbedPane.addTab(panel.getTitle(), null, panel, panel.getToolTipText());
       if (panel instanceof IntlOptions) intlIndex = index;
-      if (panel instanceof FpgaOptions) fpgaTabIdx = index;
     }
 
     final var contents = getContentPane();
@@ -73,16 +67,6 @@ public class PreferencesFrame extends LFrame.Dialog {
     frame.setVisible(true);
   }
 
-  public static void showFPGAPreferences() {
-    final var frame = (PreferencesFrame) MENU_MANAGER.getJFrame(true, null);
-    frame.setFpgaTab();
-    frame.setVisible(true);
-  }
-
-  public void setFpgaTab() {
-    if (fpgaTabIdx < 0) return;
-    tabbedPane.setSelectedIndex(fpgaTabIdx);
-  }
 
   private static class WindowMenuManager extends WindowMenuItemManager implements LocaleListener {
     private PreferencesFrame window = null;

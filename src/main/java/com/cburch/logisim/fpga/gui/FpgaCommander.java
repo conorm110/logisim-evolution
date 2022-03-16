@@ -339,7 +339,7 @@ public class FpgaCommander
     if (e.getActionCommand().equals("annotate")) {
       annotate(annotationList.getSelectedIndex() == 0);
     } else if (e.getActionCommand().equals("Settings")) {
-      PreferencesFrame.showFPGAPreferences();
+      //PreferencesFrame.showFPGAPreferences();
     } else if (e.getActionCommand().equals("ToolPath")) {
       selectToolPath(MyBoardInformation.fpga.getVendor());
       handleHdlOnly();

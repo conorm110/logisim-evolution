@@ -11,7 +11,6 @@ package com.cburch.logisim.gui.menu;
 
 import com.cburch.logisim.circuit.CircuitState;
 import com.cburch.logisim.circuit.Simulator;
-import com.cburch.logisim.fpga.menu.MenuFpga;
 import com.cburch.logisim.gui.generic.LFrame;
 import com.cburch.logisim.proj.Project;
 import com.cburch.logisim.util.LocaleListener;
@@ -87,7 +86,6 @@ public class LogisimMenuBar extends JMenuBar {
   public final MenuProject project;
   public final MenuSimulate simulate;
   public final MenuHelp help;
-  public final MenuFpga fpga;
   private final LFrame parent;
   private final MyListener listener;
   private final Project saveProj;
@@ -108,7 +106,6 @@ public class LogisimMenuBar extends JMenuBar {
     add(edit = new MenuEdit(this));
     add(project = new MenuProject(this));
     add(simulate = new MenuSimulate(this));
-    add(fpga = new MenuFpga(parent, this, saveProj));
     add(new WindowMenu(parent));
     add(help = new MenuHelp(this));
 
@@ -209,7 +206,6 @@ public class LogisimMenuBar extends JMenuBar {
       file.localeChanged();
       edit.localeChanged();
       project.localeChanged();
-      fpga.localeChanged();
       simulate.localeChanged();
       help.localeChanged();
     }
