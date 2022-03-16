@@ -41,13 +41,6 @@ public final class SyntaxChecker {
     if (forbiddenMatcher.find()) {
       message = message.concat(S.get("variableDoubleUnderscore"));
     }
-    if (hdl != null) {
-      message =
-          message.concat(
-              hdl.equals(HdlGeneratorFactory.VHDL)
-                  ? S.get("variableVHDLKeyword")
-                  : S.get("variableVerilogKeyword"));
-    }
     if (val.endsWith("_")) {
       message = message.concat(S.get("variableEndsWithUndescore"));
     }

@@ -101,13 +101,6 @@ public class CorrectLabel {
   public static boolean isKeyword(String label, Boolean showDialog) {
     boolean ret = false;
 
-    if (Vhdl.VHDL_KEYWORDS.contains(label.toLowerCase())) {
-      ret = true;
-      if (showDialog) OptionPane.showMessageDialog(null, S.get("VHDLKeywordNameError"));
-    } else if (VERILOG_KEYWORDS.contains(label.toLowerCase())) {
-      if (showDialog) OptionPane.showMessageDialog(null, S.get("VerilogKeywordNameError"));
-      ret = true;
-    }
     return ret;
   }
 

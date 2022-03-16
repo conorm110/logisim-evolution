@@ -92,8 +92,6 @@ public class ProjectCircuitActions {
       /* Checking for valid names */
       if (name.isEmpty()) {
         error = new JLabel(S.get("circuitNameMissingError"));
-      } else if (CorrectLabel.isKeyword(name, false)) {
-        error = new JLabel("\"" + name + "\": " + S.get("circuitNameKeyword"));
       } else if (!SyntaxChecker.isVariableNameAcceptable(name, false)) {
         error = new JLabel("\"" + name + "\": " + S.get("circuitNameInvalidName"));
       } else if (nameIsInUse(proj, name)) {
