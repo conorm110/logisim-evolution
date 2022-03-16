@@ -8,7 +8,9 @@ Branch [develop](https://github.com/logisim-evolution/logisim-evolution/tree/dev
 
 ---
 
-# Logisim-evolution #
+# Logisim Evolution LT EDITION#
+
+**NOTE: This version of logisim allows for use of keywords typically used in VHDL and Verilog in order to allow for a closer following of the nand2tetris program. This means that the features in logisim for generating VHDL and Verilog no longer work. Trying to use these features may crash the program.**
 
 * **Table of contents**
   * [Features](#features)
